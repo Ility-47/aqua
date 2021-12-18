@@ -1,0 +1,50 @@
+* {padding: 0;margin: 0;border: 0;}
+  *, *:before, :after {-webkit-box-sizing: border-box;box-sizing: border-box;}  
+  :focus, :active {outline: none;}  
+  a:focus, a:active {outline: none;} 
+  nav, footer, header, aside {display: block;} 
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 100%;} 
+  input, button, textarea {font-family: inherit;}  
+  input::-ms-clear {display: none;}  
+  button {cursor: pointer;}
+  button::-moz-focus-inner {padding: 0;border: 0;}
+  a, a:visited {text-decoration: none;}
+  a:hover {text-decoration: none;color: #9AA8b1;transition: .7s;}
+  ul li {list-style: none;}
+  img {vertical-align: top;}
+  h1, h2, h3, h4, h5, h6 {font-size: inherit;font-weight: inherit;}
+/*конец обнуления*/
+body{
+    background-color: #6a7036 ;
+    width: 100%;
+    background-image: url('image/fon.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.fon{
+    position: fixed;
+    opacity: .8;
+    background-color: #6a7036 ;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.fish{
+    position: absolute;
+    animation: fish 20s linear infinite;
+}
+@keyframes fish{
+    0%{transform: translate(-300px, 0);}
+    12.5%{transform: translate(300px, -100px)}
+    25%{transform: rotate(45deg);}
+    50%{transform: translate(600px, 200px)}
+    62.5%{transform:rotate(-20deg);}
+    75%{transform: translate(900px,-30px) rotate(-20deg);}
+    100%{transform: translate(1900px, 50px)rotate(0);}
+}
