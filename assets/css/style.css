@@ -37,7 +37,7 @@ body{
 }
 .fish{
     position: absolute;
-    animation: fish 20s linear infinite;
+    /*animation: fish 20s linear infinite;*/
 }
 @keyframes fish{
     0%{transform: translate(-300px, 0);}
