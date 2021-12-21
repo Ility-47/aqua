@@ -21,6 +21,7 @@ document.querySelector('body').onmousemove = function(event) {
             function fishDeg(){
                  fish.style.transform = 'rotate(' + arcctg(x, y) * 57.2958  + 'deg)';
              }
+        fishDeg();
     };
 
     function arcctg (x, y){
@@ -29,9 +30,7 @@ document.querySelector('body').onmousemove = function(event) {
         if(x < 0 && y < 0) return Math.PI + Math.atan(y / x);
         if(x > 0 && y < 0) return 3 * Math.PI / 2 + Math.abs(Math.atan(x / y));
     }
-    let promise = new Promise((resolve, reject) =>{
-        fishDeg();
-        resolve();
-    });
+
+    
     fishFlex();
 }
