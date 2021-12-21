@@ -18,11 +18,11 @@ document.querySelector('body').onmousemove = function(event) {
         const fish = document.querySelector('.fish');
         fish.style.top = cursY  + 'px';
         fish.style.left = cursX  + 'px';  
-        
+            function fishDeg(){
+                 fish.style.transform = 'rotate(' + arcctg(x, y) * 57.2958  + 'deg)';
+             }
     };
-    function fishDeg(){
-        fish.style.transform = 'rotate(' + arcctg(x, y) * 57.2958  + 'deg)';
-    }
+
     function arcctg (x, y){
         if(x > 0 && y > 0) return Math.PI / 2 - Math.atan(x / y);
         if(x < 0 && y > 0) return Math.PI / 2 - Math.atan(x / y);
