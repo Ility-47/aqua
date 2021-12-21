@@ -8,25 +8,30 @@ function randomInteger(min, max) {
 
 document.querySelector('body').onmousemove = function(event) {
     event = event || window.event; // кроссбраузерность
-    console.log(event); // вывод в консоль
-    console.log(event.clientX)
-    let x = window.innerWidth;
-    let y = window.innerHeight;
-    
-    x = event.clientX
-    y =  event.clientY
-    //console.log(clientX)
+    let x = event.clientX - 280;
+    let y = event.clientY - 145;
+    console.log(x + ' ' + y);
+    let cursX = event.clientX - 447;
+    let cursY =  event.clientY - 156;
 
     function fishFlex(event) {
-        //window.innerWidth = event.clientX;
-        //window.innerHeight = event.clientY;
-        //console.log(event.clientX)
         const fish = document.querySelector('.fish');
-        fish.style.top ='80px';
-        fish.style.top = y + 'px';
-        fish.style.left = x + 'px';
+        fish.style.top = cursY  + 'px';
+        fish.style.left = cursX  + 'px';  
+        
     };
+    function fishDeg(){
+        fish.style.transform = 'rotate(' + arcctg(x, y) * 57.2958  + 'deg)';
+    }
+    function arcctg (x, y){
+        if(x > 0 && y > 0) return Math.PI / 2 - Math.atan(x / y);
+        if(x < 0 && y > 0) return Math.PI / 2 - Math.atan(x / y);
+        if(x < 0 && y < 0) return Math.PI + Math.atan(y / x);
+        if(x > 0 && y < 0) return 3 * Math.PI / 2 + Math.abs(Math.atan(x / y));
+    }
+    let promise = new Promise((resolve, reject) =>{
+        fishDeg();
+        resolve();
+    });
     fishFlex();
 }
-
-
